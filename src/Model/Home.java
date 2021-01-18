@@ -3,7 +3,7 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Home implements Serializable{
+public class Home implements Serializable {
     private String numberHome;
     private int lengthOfStay;
     private String kindOfHome;

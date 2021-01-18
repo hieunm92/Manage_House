@@ -84,14 +84,14 @@ public class TestMain {
             if (isApartment) {
                 System.out.println("Nhập diện tích căn hộ ");
                 int area = Integer.parseInt(scanner.nextLine());
-                Home home = new Apartment(numberHome,lengthOfStay,kindOfHome,dateOfRent,cost,area);
+                Home home = new Apartment(numberHome, lengthOfStay, kindOfHome, dateOfRent, cost, area);
                 manageHome.addNewHome(home);
             }
-            isHomeStay =kindOfHome.equalsIgnoreCase("HS");
+            isHomeStay = kindOfHome.equalsIgnoreCase("HS");
             if (isHomeStay) {
                 System.out.println("Nhập số lượng người lưu trú");
                 int numberPeople = Integer.parseInt(sc.nextLine());
-                Home home = new HomeStay(numberHome,lengthOfStay,kindOfHome,dateOfRent,cost,numberPeople);
+                Home home = new HomeStay(numberHome, lengthOfStay, kindOfHome, dateOfRent, cost, numberPeople);
                 manageHome.addNewHome(home);
             }
         } while (isApartment == false && isHomeStay == false);

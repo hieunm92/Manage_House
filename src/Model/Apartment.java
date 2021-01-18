@@ -3,9 +3,8 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Apartment extends Home implements Amount, Serializable{
+public class Apartment extends Home implements Amount, Serializable {
     private int area;
-
 
 
     public Apartment(String numberHome, int lengthOfStay, String kindOfHome, LocalDate dateOfRent, double cost, int area) {
@@ -19,13 +18,14 @@ public class Apartment extends Home implements Amount, Serializable{
 
     @Override
     public double getTotalMoney() {
-        return getArea()* getCost();
+        return getArea() * getCost();
     }
 
     @Override
     public String toString() {
-        return "Apartment{" + super.toString()+
-                "area=" + area +
+        return "Apartment{" + super.toString() +
+                "area= " + area +
+                "TotalMoney= " + getTotalMoney() +
                 '}';
     }
 

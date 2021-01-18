@@ -25,6 +25,7 @@ public class HomeStay extends Home implements Amount,Serializable {
     public String toString() {
         return "HomeStay{" + super.toString()+
                 "numberPeople=" + numberPeople +
+                "TotalMoney" + getTotalMoney()+
                 '}';
     }
 }
