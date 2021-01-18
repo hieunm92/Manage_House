@@ -23,8 +23,8 @@ public class ManageHome {
 
     public void sortHomeByCost(){
         Collections.sort(homeList, (o1, o2) -> {
-            if (o1.getCost() > o2.getCost()) return 1;
-            else if (o1.getCost() < o2.getCost()) return -1;
+            if (o1.getCost() > o2.getCost()) return 100000;
+            else if (o1.getCost() < o2.getCost()) return -10000;
             else return 0;
         });
         System.out.println(homeList);
@@ -32,8 +32,8 @@ public class ManageHome {
 
     public void showHomeHaveCostMinAndMax(){
         sortHomeByCost();
-        System.out.println("Nhà có giá thuê cao nhất" + homeList.get(1));
-        System.out.println("Nhà có giá thuê thấp nhất" + homeList.get(-1));
+        System.out.println("Nhà có giá thuê cao nhất" + homeList.get(0));
+        System.out.println("Nhà có giá thuê thấp nhất" + homeList.get(homeList.size()-1));
     }
 
     public void searchHome(String numberHome) {

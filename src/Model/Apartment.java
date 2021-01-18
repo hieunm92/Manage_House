@@ -6,6 +6,8 @@ import java.time.LocalDate;
 public class Apartment extends Home implements Amount, Serializable{
     private int area;
 
+
+
     public Apartment(String numberHome, int lengthOfStay, String kindOfHome, LocalDate dateOfRent, double cost, int area) {
         super(numberHome, lengthOfStay, kindOfHome, dateOfRent, cost);
         this.area = area;

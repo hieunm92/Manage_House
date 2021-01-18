@@ -3,12 +3,15 @@ package Model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Home {
+public class Home implements Serializable{
     private String numberHome;
     private int lengthOfStay;
     private String kindOfHome;
     private LocalDate dateOfRent;
     private double cost;
+
+    public Home() {
+    }
 
     public Home(String numberHome, int lengthOfStay, String kindOfHome, LocalDate dateOfRent, double cost) {
         this.numberHome = numberHome;

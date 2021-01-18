@@ -36,7 +36,9 @@ public class TestMain {
                     }
                     break;
                 case 2:
-                    manageHome.searchHome();
+                    System.out.println("Nhập nhà cần tìm kiếm");
+                    String numberHome = scanner.nextLine();
+                    manageHome.searchHome(numberHome);
                     break;
                 case 3:
                     manageHome.sortHomeByCost();
@@ -89,7 +91,7 @@ public class TestMain {
             if (isHomeStay) {
                 System.out.println("Nhập số lượng người lưu trú");
                 int numberPeople = Integer.parseInt(sc.nextLine());
-               Home home = new HomeStay(numberHome,lengthOfStay,kindOfHome,dateOfRent,cost,numberPeople);
+                Home home = new HomeStay(numberHome,lengthOfStay,kindOfHome,dateOfRent,cost,numberPeople);
                 manageHome.addNewHome(home);
             }
         } while (isApartment == false && isHomeStay == false);
