@@ -8,6 +8,7 @@ import Storage.WriteAndReadFile;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class ManageHome {
     private static final String FILE_NAME = "home.dat";
@@ -47,7 +48,7 @@ public class ManageHome {
                         , homeStay.getKindOfHome()
                         , homeStay.getDateOfRent()
                         , homeStay.getCost()
-                        ,""
+                        , ""
                         , homeStay.getNumberPeople()
                         , homeStay.getTotalMoney() + "\n");
             }
@@ -79,12 +80,20 @@ public class ManageHome {
         System.out.println("Không tìm thấy trong danh sách");
     }
 
-    public void deleteHome() {
-
+    public void deleteHome(String numberHome) {
+        for (Home h:homeList) {
+            if (h.getNumberHome().equalsIgnoreCase(numberHome)){
+                homeList.remove(h);
+            }
+        }
     }
 
-    public void editHome() {
-
+    public void editHome(String numberHome,double cos) {
+        for (Home h : homeList) {
+            if (h.getNumberHome().compareTo(numberHome)==0){
+                h.setCost(cos);
+            }
+        }
     }
 
     public void writeFile() {

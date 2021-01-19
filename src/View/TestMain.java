@@ -16,7 +16,7 @@ public class TestMain {
     public static void main(String[] args) {
         int choice;
         do {
-            System.out.println("\n"+"|=======================Menu======================|");
+            System.out.println("\n" + "|=======================Menu======================|");
             System.out.println("|1.Thêm nhà cho thuê mới                          |");
             System.out.println("|2.Tìm nhà trong danh sách cho thuê               |");
             System.out.println("|3.Hiển thị nhà cho thuê theo thứ tự tăng dần     |");
@@ -31,16 +31,10 @@ public class TestMain {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    System.out.println("Số lượng nhà cần thêm mới");
-                    int number = Integer.parseInt(scanner.nextLine());
-                    for (int i = 0; i < number; i++) {
-                        addNewHome();
-                    }
+                    addNewHouse();
                     break;
                 case 2:
-                    System.out.println("Nhập nhà cần tìm kiếm");
-                    String numberHome = scanner.nextLine();
-                    manageHome.searchHome(numberHome);
+                    findHomeByIndex();
                     break;
                 case 3:
                     manageHome.sortHomeByCost();
@@ -49,10 +43,10 @@ public class TestMain {
                     manageHome.showHomeHaveCostMinAndMax();
                     break;
                 case 5:
-
+                    editCostOfHouse();
                     break;
                 case 6:
-
+                    deleteHouse();
                     break;
                 case 7:
                     manageHome.writeFile();
@@ -65,6 +59,35 @@ public class TestMain {
                     break;
             }
         } while (true);
+    }
+
+    private static void deleteHouse(){
+        System.out.println("Nhập số nhà muốn xoá");
+        String numberHome = scanner.nextLine();
+        manageHome.deleteHome(numberHome);
+    }
+
+    private static void addNewHouse() {
+        System.out.println("Số lượng nhà cần thêm mới");
+        int number = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < number; i++) {
+            addNewHome();
+        }
+    }
+
+    private static void findHomeByIndex() {
+        System.out.println("Nhập nhà cần tìm kiếm");
+        String numberHome = scanner.nextLine();
+        manageHome.searchHome(numberHome);
+    }
+
+    private static void editCostOfHouse() {
+        String numberHome;
+        System.out.println("Nhập số nhà cần sửa");
+        numberHome = scanner.nextLine();
+        System.out.println("nhập giá sửa");
+        double cos =Double.parseDouble(scanner.nextLine()) ;
+        manageHome.editHome(numberHome,cos);
     }
 
     public static void addNewHome() {

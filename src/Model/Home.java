@@ -37,6 +37,26 @@ public class Home implements Serializable {
         return lengthOfStay;
     }
 
+    public void setNumberHome(String numberHome) {
+        this.numberHome = numberHome;
+    }
+
+    public void setLengthOfStay(int lengthOfStay) {
+        this.lengthOfStay = lengthOfStay;
+    }
+
+    public void setKindOfHome(String kindOfHome) {
+        this.kindOfHome = kindOfHome;
+    }
+
+    public void setDateOfRent(LocalDate dateOfRent) {
+        this.dateOfRent = dateOfRent;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
     public double getCost() {
         return cost;
     }
