@@ -1,6 +1,8 @@
 package Service;
 
+import Model.Apartment;
 import Model.Home;
+import Model.HomeStay;
 import Storage.WriteAndReadFile;
 
 import java.util.ArrayList;
@@ -16,18 +18,49 @@ public class ManageHome {
     }
 
     public void showAll() {
+        System.out.printf("%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s"
+                , "Số nhà"
+                , "Thời gian lưu trú"
+                , "Loại nhà thuê"
+                , "Ngày thuê"
+                , "Giá nhà"
+                , "Diện tích"
+                , "Lượng người"
+                , "Tổng tiền");
         for (Home house : homeList) {
-            System.out.println(house);
+            if (house instanceof Apartment) {
+                Apartment apartment = (Apartment) house;
+                System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s"
+                        , apartment.getNumberHome()
+                        , apartment.getLengthOfStay()
+                        , apartment.getKindOfHome()
+                        , apartment.getDateOfRent()
+                        , apartment.getCost()
+                        , apartment.getArea()
+                        , ""
+                        , apartment.getTotalMoney() + "\n");
+            } else if (house instanceof HomeStay) {
+                HomeStay homeStay = (HomeStay) house;
+                System.out.printf("\n%-20s%-20s%-20s%-20s%-20s%-20s%-20s%-20s"
+                        , homeStay.getNumberHome()
+                        , homeStay.getLengthOfStay()
+                        , homeStay.getKindOfHome()
+                        , homeStay.getDateOfRent()
+                        , homeStay.getCost()
+                        ,""
+                        , homeStay.getNumberPeople()
+                        , homeStay.getTotalMoney() + "\n");
+            }
         }
     }
 
     public void sortHomeByCost() {
         Collections.sort(homeList, (o1, o2) -> {
-            if (o1.getCost() > o2.getCost()) return 100000;
-            else if (o1.getCost() < o2.getCost()) return -10000;
+            if (o1.getCost() > o2.getCost()) return -1;
+            else if (o1.getCost() < o2.getCost()) return 1;
             else return 0;
         });
-        System.out.println(homeList);
+        showAll();
     }
 
     public void showHomeHaveCostMinAndMax() {
@@ -44,6 +77,14 @@ public class ManageHome {
             }
         }
         System.out.println("Không tìm thấy trong danh sách");
+    }
+
+    public void deleteHome() {
+
+    }
+
+    public void editHome() {
+
     }
 
     public void writeFile() {

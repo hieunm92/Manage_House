@@ -33,6 +33,10 @@ public class Home implements Serializable {
         return dateOfRent;
     }
 
+    public int getLengthOfStay() {
+        return lengthOfStay;
+    }
+
     public double getCost() {
         return cost;
     }

@@ -16,15 +16,17 @@ public class TestMain {
     public static void main(String[] args) {
         int choice;
         do {
-            System.out.println("=====Menu=====");
-            System.out.println("1.Thêm nhà cho thuê mới");
-            System.out.println("2.Tìm nhà trong danh sách cho thuê");
-            System.out.println("3.Hiển thị nhà cho thuê theo thứ tự tăng dần");
-            System.out.println("4.Hiển thị nhà có giá thuê cao nhất và thấp nhất");
-            System.out.println("5.Ghi File");
-            System.out.println("6.Đọc File");
-            System.out.println("0. Thoát");
-            System.out.println("-----------------------------------");
+            System.out.println("\n"+"|=======================Menu======================|");
+            System.out.println("|1.Thêm nhà cho thuê mới                          |");
+            System.out.println("|2.Tìm nhà trong danh sách cho thuê               |");
+            System.out.println("|3.Hiển thị nhà cho thuê theo thứ tự tăng dần     |");
+            System.out.println("|4.Hiển thị nhà có giá thuê cao nhất và thấp nhất |");
+            System.out.println("|5.Sửa thông tin nhà                              |");
+            System.out.println("|6.Xoá thông tin nhà                              |");
+            System.out.println("|7.Ghi File                                       |");
+            System.out.println("|8.Đọc File                                       |");
+            System.out.println("|0. Thoát                                         |");
+            System.out.println("|-------------------------------------------------|");
             System.out.println("Xin chọn phương thức thực hiện");
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
@@ -47,9 +49,15 @@ public class TestMain {
                     manageHome.showHomeHaveCostMinAndMax();
                     break;
                 case 5:
-                    manageHome.writeFile();
+
                     break;
                 case 6:
+
+                    break;
+                case 7:
+                    manageHome.writeFile();
+                    break;
+                case 8:
                     manageHome.readFile();
                     break;
                 case 0:
